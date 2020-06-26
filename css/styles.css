@@ -10037,17 +10037,17 @@ hr.light {
   color: #545d68;
 }
 #mainNav .navbar-nav .nav-item .nav-link {
-  color: #545d68;
+  color: #fff;
   font-family: "Dosis", Roboto, sans-serif;
   font-weight: 500;
   font-size: 1.4rem;
   padding: 0.75rem 0;
 }
 #mainNav .navbar-nav .nav-item .nav-link:hover, #mainNav .navbar-nav .nav-item .nav-link:active {
-  color: #545d68;
+  color: #fff;
 }
 #mainNav .navbar-nav .nav-item .nav-link.active {
-  color: #545d68 !important;
+  color: #fff !important;
 }
 @media (min-width: 992px) {
   #mainNav {
