@@ -1,0 +1,167 @@
+/*
+ * Sitewide colour palette (teal / amber / violet on deep charcoal-navy),
+ * plus styles for the animated hero map.
+ * Loaded after styles.css so these rules take precedence over the base theme.
+ */
+:root {
+  --c-teal: #009999;
+  --c-teal-light: #33b3b3;
+  --c-amber: #f9981d;
+  --c-violet: #543d98;
+  --c-navy: #324a6d;
+  --c-ink: #222222;
+  --c-mist: #c8d5dc;
+  --c-white: #ffffff;
+
+  --primary: var(--c-teal);
+  --secondary: var(--c-navy);
+  --dark: var(--c-ink);
+  --light: #f3f6f8;
+}
+
+::selection {
+  background: var(--c-amber);
+  color: var(--c-ink);
+}
+
+body {
+  color: var(--c-ink);
+  background-color: var(--c-white);
+}
+
+a {
+  color: var(--c-teal);
+  transition: color 0.2s ease;
+}
+a:hover,
+a:focus {
+  color: var(--c-amber);
+}
+
+.text-muted {
+  color: var(--c-navy) !important;
+}
+
+/* ---------- Navigation ---------- */
+#mainNav {
+  background-color: var(--c-ink);
+}
+#mainNav .navbar-nav .nav-item .nav-link {
+  color: var(--c-white);
+}
+#mainNav .navbar-nav .nav-item .nav-link:hover,
+#mainNav .navbar-nav .nav-item .nav-link:active {
+  color: var(--c-amber);
+}
+#mainNav .navbar-nav .nav-item .nav-link.active {
+  color: var(--c-teal-light) !important;
+}
+@media (min-width: 992px) {
+  #mainNav {
+    background-color: transparent;
+  }
+  #mainNav .navbar-nav .nav-item .nav-link:hover {
+    color: var(--c-amber);
+  }
+  #mainNav.navbar-scrolled {
+    background-color: rgba(34, 34, 34, 0.92);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.25);
+  }
+  #mainNav.navbar-scrolled .navbar-nav .nav-item .nav-link {
+    color: var(--c-white);
+  }
+  #mainNav.navbar-scrolled .navbar-nav .nav-item .nav-link:hover {
+    color: var(--c-amber);
+  }
+}
+
+/* ---------- Hero / masthead ---------- */
+header.masthead {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: radial-gradient(ellipse at 70% 20%, #3a557c 0%, var(--c-navy) 35%, #1c2433 75%, var(--c-ink) 100%);
+}
+header.masthead .hero-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  display: block;
+}
+/* soft vignette so the headline stays readable over the map */
+header.masthead::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 55% 40% at 50% 50%, rgba(34, 34, 34, 0.55) 0%, rgba(34, 34, 34, 0) 70%),
+    linear-gradient(to bottom, rgba(34, 34, 34, 0) 70%, rgba(34, 34, 34, 0.6) 100%);
+}
+header.masthead h1 {
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.45);
+}
+header.masthead h2 {
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.5);
+}
+header.masthead .hero-accent {
+  display: block;
+  width: 4rem;
+  height: 3px;
+  margin: 1.25rem auto 1.5rem;
+  border-radius: 2px;
+  background: linear-gradient(to right, var(--c-teal), var(--c-amber));
+}
+
+/* ---------- Portfolio ---------- */
+#portfolio .container-fluid .portfolio-box .portfolio-box-caption {
+  background: linear-gradient(135deg, rgba(0, 153, 153, 0.9) 0%, rgba(84, 61, 152, 0.9) 100%);
+}
+#portfolio .container-fluid .portfolio-box .portfolio-box-caption .project-category {
+  color: var(--c-amber);
+  letter-spacing: 0.05em;
+}
+
+/* ---------- Talks ---------- */
+#talks {
+  background-color: var(--light);
+}
+#talks .text {
+  color: var(--c-teal);
+  font-weight: 500;
+}
+#talks a:hover .text {
+  color: var(--c-amber);
+}
+
+/* ---------- Contact ---------- */
+#contact {
+  padding: 4rem 0 3rem;
+  background-color: var(--c-navy);
+}
+#contact .text-muted {
+  color: var(--c-mist) !important;
+}
+#contact .fa-3x,
+#contact svg.text-muted {
+  color: var(--c-teal-light) !important;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+#contact a:hover svg,
+#contact a:focus svg {
+  color: var(--c-amber) !important;
+  transform: translateY(-2px);
+}
+
+/* ---------- Footer ---------- */
+footer.bg-light {
+  background-color: var(--c-ink) !important;
+}
+footer .text-muted {
+  color: var(--c-mist) !important;
+}

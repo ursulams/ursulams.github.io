@@ -31,7 +31,7 @@
     offset: 75
   });
 
-  /* // Collapse Navbar
+  // Collapse Navbar
   var navbarCollapse = function() {
     if ($("#mainNav").offset().top > 100) {
       $("#mainNav").addClass("navbar-scrolled");
@@ -43,7 +43,5 @@
   navbarCollapse();
   // Collapse the navbar when page is scrolled
   $(window).scroll(navbarCollapse);
-
-  */
 
 })(jQuery); // End of use strict
